@@ -9,7 +9,7 @@ Send the user the message below, then run **Module Check** and **Module Toggle R
 
 ### Message
 
-> # 🚀 Welcome to SmartFlow
+> # Welcome to SmartFlow
 >
 > Your AI just became a coworker. SmartFlow speeds up your workflow with guides, modules and a clean project structure.
 >
@@ -18,7 +18,7 @@ Send the user the message below, then run **Module Check** and **Module Toggle R
 > - `Prefix` + `Modules`: turn modules on or off
 > - `Prefix` + `Status`: see what is active
 >
-> 💡 You can uninstall SmartFlow any time with **Prefix** **Uninstall**.
+> You can uninstall SmartFlow any time with **Prefix** **Uninstall**.
 >
 > Let's get to work!
 
