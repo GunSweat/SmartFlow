@@ -66,6 +66,8 @@ Every time I refore to:
 
 ## Module Check
 
-
+    Check the SmartFlow Modules Folder if any Modules are in there that hasn't be set (if they are enabled or not) in the settings if they arent't yet put them as "Disabled" in the settings
 
 ## Module Toggle Request
+
+    Ask the user multiable Question (Try to call the Ask tool as few as pssible) the main part should be on the 
