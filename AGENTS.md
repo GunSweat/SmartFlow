@@ -1,73 +1,86 @@
-###### _This File (including other files this file tells you to read) has full priorty before you do anything else first take care of this file exept the user tells you other vise_
+###### _This file (including any files it tells you to read) has top priority. Handle it before anything else, unless the user says otherwise._
 
-Every time I refore to:
+Notation:
 
-    "editor/" = editor folder (like OpenCode, Codex or ClaudeCode)
+    "editor/" = the editor's config folder (e.g. OpenCode, Codex or Claude Code)
 
-    "**...**" = variable or function
+    "**...**" = a variable or function
 
- - Also read the following functions / variables after that follow the guids in SmartFlow.
+ - After reading this file, read **editor/SmartFlow.md** and follow its guides.
 
- - and all command can be ran by the user as well with the prefix from the settings the default is "$".
+ - All functions can also be run by the user with the prefix from the settings (default is "$").
 
- - If a variable gets send to the user don't send the name instead send the value.
+ - If a variable is sent to the user, send its value, not its name.
 
- - every time i mention to ask the user something try to use ask tool or feature if possible. 
+ - Whenever you need to ask the user something, use the ask tool or feature if available.
 
- - If Smart Flow is disable the only command the user should be able to run is enable the rest should Always say "*Smart Flow disabled run '**prefix** **Enable**' to enable it*" 
+ - If SmartFlow is disabled, the only command the user may run is **Enable**. For every other command reply: "*SmartFlow is disabled. Run '**Prefix** Enable' to enable it.*"
+
+ - Unknown command: reply "Unknown command. Run '**Prefix** Help' for the list."
 
 # Variables
 
 ## Setup
 
-    True if **editor/settings.conf** is not exsitsing else False
+    True if **editor/settings.conf** does not exist, otherwise False.
 
-## Enchaned
+## Enabled
 
-    True if the user said it should be on for this chat or he has toggel it on in the Settings
+    True if the user turned SmartFlow on for this chat or it is on in the settings.
 
 ## Prefix
 
-    The prefix set in the
+    The prefix saved in **editor/settings.conf** (default "$").
 
 # Functions
 
 ## Setup
 
-    Create the "editor/settings.conf" file and ask the user what prefix he would like options are:
-
-     - §
-
-     - $
-
-     - %
-
-     - .
-
-     - #
+    1. Create **editor/settings.conf**.
+    2. Ask the user which prefix they want. Options: §  $  %  .  #
+    3. Save the prefix and set SmartFlow to Enabled in the settings.
+    4. Make sure these folders exist: SmartFlow/Modules, SmartFlow/Scripts, SmartFlow/Workspace, SmartFlow/Playground.
 
 ## Uninstall
 
-    Ask the user if he realy wants to uninstall, options:
+    Ask the user if they really want to uninstall. Options:
 
-    Yes: Remove the Agents.md, SmartFlow.md and SmartFlow (folder)
-
-    No: Cancle the Command
-
-    Only Disable: Just run the disable command
+    Yes: Remove AGENTS.md, SmartFlow.md, the SmartFlow/ folder and settings.conf
+         (if AGENTS.md was merged, remove only the SmartFlow section)
+    No: Cancel the command
+    Only Disable: Run **Disable** instead
 
 ## Enable
 
-    Enable SmartFlow
+    Set SmartFlow to Enabled in the settings and confirm to the user.
 
 ## Disable
 
-    Disable SmartFlow
+    Set SmartFlow to Disabled in the settings and confirm to the user.
+
+## Help
+
+    Show the user every command with a one-line description.
+
+## Status
+
+    Show the user: version, **Prefix**, Enabled/Disabled, and each module with its state.
+
+## Prefix
+
+    Ask the user for a new prefix (same options as Setup) and save it.
 
 ## Module Check
 
-    Check the SmartFlow Modules Folder if any Modules are in there that hasn't be set (if they are enabled or not) in the settings if they arent't yet put them as "Disabled" in the settings
+    Look in SmartFlow/Modules for modules that have no state in the settings yet.
+    Add each one as "Disabled".
 
 ## Module Toggle Request
 
-    Ask the user multiable Question (Try to call the Ask tool as few as pssible) the main part should be on the 
+    Ask the user which modules they want enabled. Use the ask tool as few times as possible
+    (one multi-select question is ideal). Show each module's name and a short description,
+    then save the choices to the settings.
+
+## Modules
+
+    Run **Module Check** followed by **Module Toggle Request** again.

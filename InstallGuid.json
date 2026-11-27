@@ -1,31 +1,33 @@
 {
   "name": "SmartFlow Install Guide",
-  "version": 1,
+  "version": 2,
   "source": "InstallGuid.md",
+  "base_url": "https://raw.githubusercontent.com/GunSweat/SmartFlow/refs/heads/main/",
   "steps": [
     {
       "step": 1,
       "action": "download",
-      "targets": ["AGENTS.md", "SMARTFLOW.md", "SmartFlow/"]
+      "targets": ["AGENTS.md", "SmartFlow.md"],
+      "note": "File names are case-sensitive. Also create the folders SmartFlow/Modules, SmartFlow/Scripts, SmartFlow/Workspace and SmartFlow/Playground."
     },
     {
       "step": 2,
       "action": "check_existing",
       "question": "Does the user already have an AGENTS.md in the config folder (or wherever AGENTS.md files need to go)?",
-      "yes": "Merge the two",
+      "yes": "Merge the two. Keep the user's content and put the SmartFlow section at the top. Never delete the user's rules.",
       "no": "Just place the AGENTS.md there"
     },
     {
       "step": 3,
       "action": "place_rest",
       "target": "config folder",
-      "note": "The rest can also be placed in the config folder"
+      "note": "Place SmartFlow.md and the SmartFlow/ folder next to AGENTS.md in the config folder."
     },
     {
       "step": 4,
       "action": "ask_via_tool",
       "question": "Do you want to start SmartFlow now?",
-      "yes": "Read the AGENTS.md and follow its instructions",
+      "yes": "Read AGENTS.md, run the Setup function, then follow SmartFlow.md",
       "no": "Stop"
     }
   ]
