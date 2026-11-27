@@ -6,4 +6,7 @@
 
 ## How to install
 
-Type
+Run this in your Ai editor (It must have accses to the editors folder)
+
+    Please install SmartFlow for me, thanks:
+    raw.githubusercontent.com/GunSweat/SmartFlow/refs/heads/main/InstallGuid.md
